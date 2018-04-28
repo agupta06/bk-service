@@ -1,0 +1,14 @@
+JEE JNDI DATABASE CONFIGURATION
+
+1) Open file TOMCAT_HOME/conf/server.xml
+
+2)Inside the <GlobalNamingResources> tag add the below resource configuration
+<Resource type="javax.sql.DataSource" auth="Container" name="databaseconnection" maxWait="1000" minIdle="5" maxIdle="20" maxActive="100" password="root" username="root" url="jdbc:mysql://10.238.48.30:3306/cabportaldb" driverClassName="com.mysql.jdbc.Driver" global="databaseconnection"/>
+
+3) Now open file TOMCAT_HOME/conf/context.xml
+
+4) In context.xml under <Context> tag, add the below configuration
+
+<ResourceLink type="javax.sql.DataSource" auth="Container" global="databaseconnection" name="databaseconnection"/>
+
+5) Add mysql connector jar under TOMCAT_HOME/lib. Jar is available in this directory only.

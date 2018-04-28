@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright © 2016 BroadSoft. All rights reserved. -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:hz="http://www.hazelcast.com/schema/spring"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+           http://www.springframework.org/schema/context
+		   http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+	<context:component-scan
+		base-package="com.resolvebug.app.*" />
+
+	<bean id="responseBuilder"
+		class="com.resolvebug.app.response.manager.ResponseBuilder" />
+	<bean id="responseObjectManager"
+		class="com.resolvebug.app.response.manager.ResponseObjectManager" />
+	<bean id="status" class="com.resolvebug.app.beans.Status"
+		scope="prototype" />
+
+	<bean id="serviceResource"
+		class="com.resolvebug.app.service.ServiceResource" scope="prototype" />
+	<bean id="serviceManager"
+		class="com.resolvebug.app.manager.ServiceManager" scope="prototype" />
+	<bean id="serviceAdapter"
+		class="com.resolvebug.app.adapter.ServiceAdapter" scope="prototype" />
+	<bean id="loginDetails"
+		class="com.resolvebug.app.beans.LoginDetails" scope="prototype" />
+
+</beans>
