@@ -1,4 +1,4 @@
-package com.resolvebug.app.response.manager;
+package com.resolvebug.app.response;
 
 import java.net.URI;
 

@@ -1,4 +1,4 @@
-package com.resolvebug.app.response.manager;
+package com.resolvebug.app.response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

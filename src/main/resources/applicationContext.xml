@@ -23,18 +23,18 @@
 		base-package="com.resolvebug.app.*" />
 
 	<bean id="responseBuilder"
-		class="com.resolvebug.app.response.manager.ResponseBuilder" />
+		class="com.resolvebug.app.response.ResponseBuilder" />
 	<bean id="responseObjectManager"
-		class="com.resolvebug.app.response.manager.ResponseObjectManager" />
+		class="com.resolvebug.app.response.ResponseObjectManager" />
 	<bean id="status" class="com.resolvebug.app.beans.Status"
 		scope="prototype" />
 
 	<bean id="serviceResource"
-		class="com.resolvebug.app.service.ServiceResource" scope="prototype" />
+		class="com.resolvebug.app.controller.ServiceController" scope="prototype" />
 	<bean id="serviceManager"
-		class="com.resolvebug.app.manager.ServiceManager" scope="prototype" />
+		class="com.resolvebug.app.handler.ServiceHandler" scope="prototype" />
 	<bean id="serviceAdapter"
-		class="com.resolvebug.app.adapter.ServiceAdapter" scope="prototype" />
+		class="com.resolvebug.app.validator.ServiceValidator" scope="prototype" />
 	<bean id="loginDetails"
 		class="com.resolvebug.app.beans.LoginDetails" scope="prototype" />
 
