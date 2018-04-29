@@ -22,6 +22,25 @@
 	<context:component-scan
 		base-package="com.resolvebug.app.*" />
 
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost/bahi_khata_database"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<bean id="scenariodao"
+		class="com.resolvebug.app.handler.dao.HandlerDAO">
+		<property name="template" ref="jdbcTemplate"></property>
+	</bean>
+
 	<bean id="responseBuilder"
 		class="com.resolvebug.app.response.ResponseBuilder" />
 	<bean id="responseObjectManager"
@@ -30,11 +49,13 @@
 		scope="prototype" />
 
 	<bean id="serviceResource"
-		class="com.resolvebug.app.controller.ServiceController" scope="prototype" />
+		class="com.resolvebug.app.controller.ServiceController"
+		scope="prototype" />
 	<bean id="serviceManager"
 		class="com.resolvebug.app.handler.ServiceHandler" scope="prototype" />
 	<bean id="serviceAdapter"
-		class="com.resolvebug.app.validator.ServiceValidator" scope="prototype" />
+		class="com.resolvebug.app.validator.ServiceValidator"
+		scope="prototype" />
 	<bean id="loginDetails"
 		class="com.resolvebug.app.beans.LoginDetails" scope="prototype" />
 
